@@ -1,0 +1,185 @@
+আপনার প্রেজেন্টেশন স্লাইডের জন্য শিক্ষকের **Evaluation Rubric (গ্রেডিং রুব্রিক)**-এর প্রতিটি পয়েন্টকে কভার করে মোট **১০টি নির্দিষ্ট স্ক্রিনশট (Screenshots)** নেওয়ার সম্পূর্ণ গাইড নিচে দেওয়া হলো। 
+
+প্রতিটি স্ক্রিনশট কীভাবে নেবেন (কোন কোন কি চাপতে হবে), ফ্রেমে কী কী থাকতে হবে এবং স্লাইডে স্যারের সামনে কী ব্যাখ্যা করবেন—তা বিস্তারিতভাবে সাজিয়ে দেওয়া হলো:
+
+---
+
+# 📸 প্রেজেন্টেশন স্লাইডের জন্য ১০টি অপরিহার্য স্ক্রিনশট চেকলিস্ট
+
+---
+
+### 📷 স্ক্রিনশট ১: সিনেমাটিক পোর্টের ওয়াইড ওভারভিউ (Panoramic Harbor Overview)
+* **স্লাইড নম্বর:** Slide 2 / 3 (Project Overview & Scene Synthesis)
+* **কীভাবে নিবেন (Controls):** 
+  - অ্যাপ রান করার পর কিবোর্ডের **`F4`** চাপুন (Cinematic Overview Camera)।
+  - মাউস দিয়ে সামান্য প্যান করে পুরো পোর্ট, ড্র-ব্রিজ, ক্যানালের পানি, কন্টেইনার শিপ ও ক্রেন যাতে এক ফ্রেমে আসে সেভাবে ফ্রেম করুন।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *3D World Synthesis, Camera Projections & Viewing Pipeline (`glm::perspective`), Depth Testing, Horizon Fog.*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - পুরো সি পোর্ট লেআউট, ৬৪০ মিটার লম্বা অ্যাসফল্ট এক্সপ্রেসওয়ে, ওয়াটার ক্যানাল এবং ডকিং চ্যানেল।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, this is the panoramic overview of our interactive 3D Sea Port rendered with a 52° field-of-view perspective projection. The world extends seamlessly with zero geometry clipping and blends smoothly into atmospheric distance fog."*
+
+---
+
+### 📷 স্ক্রিনশট ২: দৃশ্যমান ৩ডি সূর্য ও দিনের বেলার ডিরেকশনাল লাইট (Daytime Directional Light & 3D Sun)
+* **স্লাইড নম্বর:** Slide 4 (Illumination System: Directional Light)
+* **কীভাবে নিবেন (Controls):** 
+  - মোড ডে-টাইমে থাকা অবস্থায় মাউস দিয়ে **আকাশের দিকে খাড়া ওপরে** তাকান।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *Visible Light Source, Directional Light Vector ($\vec{L}_{sun}$), Blinn-Phong Diffuse on horizontal surfaces.*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - আকাশে অবস্থিত **5.2m উজ্জ্বল গোল্ডেন 3D Sun Core** এবং চারপাশের **Solar Corona Halo Rings**।
+  - নিচে ডক, রাস্তা ও জাহাজের ডেকে সূর্যের নিখুঁত ডিফিউজ ও স্পেকুলার ইলুমিনেশন।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, our directional light is physically anchored by an emissive 3D radiant sun situated at 275m altitude. This provides verifiable mathematical lighting with optimal diffuse shading across all horizontal surfaces."*
+
+---
+
+### 📷 স্ক্রিনশট ৩: Phong Shading মোড—মসৃণ স্পেকুলার হাইলাইট (Phong Shading Fidelity)
+* **স্লাইড নম্বর:** Slide 5 (Shading Comparison: Part 1)
+* **কীভাবে নিবেন (Controls):** 
+  - কিবোর্ডের **`F2`** চাপুন (Phong Shading সক্রিয় হবে)।
+  - কোনো একটি মেটালিক কন্টেইনার বা সাগরের পানির ঢেউয়ের চকচকে অংশের কাছে ক্যামেরা রাখুন।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *Per-Fragment Lighting, Blinn-Phong Halfway Vector ($\vec{H} = \frac{\vec{L}+\vec{V}}{||\vec{L}+\vec{V}||}$), Specular Shininess Exponent ($\alpha$).*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - অন-স্ক্রিন HUD-তে লেখা: `SHADING: PHONG (PER-PIXEL)`।
+  - পানির ঢেউ এবং মেটাল কন্টেইনারের ওপর শার্প, চকচকে **Blinn-Phong Specular Highlights**।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, in Phong shading (evaluated in phong.frag), normal vectors are interpolated across fragments, producing accurate pinpoint specular highlights with zero polygon edge clipping."*
+
+---
+
+### 📷 স্ক্রিনশট ৪: Gouraud Shading মোড—ভার্টেক্স ইন্টারপোলেশন (Gouraud Shading Comparison)
+* **স্লাইড নম্বর:** Slide 5 (Shading Comparison: Part 2 — Side-by-Side)
+* **কীভাবে নিবেন (Controls):** 
+  - ঠিক আগের পজিশনে ক্যামেরা রেখে কিবোর্ডের **`F1`** চাপুন (Gouraud Shading সক্রিয় হবে)।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *Per-Vertex Lighting, Gouraud Color Interpolation, Mach Banding Demonstration.*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - অন-স্ক্রিন HUD-তে লেখা: `SHADING: GOURAUD (PER-VERTEX)`।
+  - স্পেকুলার হাইলাইটটি কীভাবে ভার্টেক্সগুলোর মাঝে ডিফিউজ/ব্লার হয়ে ছড়িয়ে পড়েছে তা পাশাপাশি দেখাবেন।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, when switching to Gouraud shading (F1), lighting equations are computed exclusively at vertex points in gouraud.vert and linearly interpolated across rasterized triangles."*
+
+---
+
+### 📷 স্ক্রিনশট ৫: নাইট সাইকেল, ৩ডি চাঁদ ও পয়েন্ট লাইটস (Night Mode, 3D Moon & Point Lights)
+* **স্লাইড নম্বর:** Slide 6 (Multi-Source Lighting: Point & Spotlights)
+* **কীভাবে নিবেন (Controls):** 
+  - কিবোর্ডের **`N`** চাপুন (ডে থেকে নাইট সাইকেলে শিফট হবে)।
+  - ডকের রাস্তা ও ল্যাম্পপোস্টগুলোর দিকে ক্যামেরা তাক করুন।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *Multiple Point Lights, Quadratic Distance Attenuation ($Atten = \frac{1}{k_c + k_l d + k_q d^2}$), 3D Luminous Moon.*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - আকাশে উজ্জ্বল **3D সিলভার চাঁদ ও লুনার ক্রেটার্স**।
+  - ডকের **৭টি সোডিয়াম স্ট্রিট ল্যাম্পের গ্লোবাল্ব ও রাস্তায় পড়া বৃত্তাকার আলোর পুল (Light Pools)**।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, pressing N toggles our nighttime multi-point lighting. Seven street lamps cast sodium light pools using non-linear quadratic distance attenuation, while the moon acts as the nocturnal directional light source."*
+
+---
+
+### 📷 স্ক্রিনশট ৬: ক্রেন স্পটলাইট ও ডাউনওয়ার্ড সার্চলাইট (Crane Spotlight & Worklight)
+* **স্লাইড নম্বর:** Slide 6 (Spotlight Falloff)
+* **কীভাবে নিবেন (Controls):** 
+  - নাইট মোডে থাকা অবস্থায় ক্রেনের নিচে ডকের দিকে তাকান।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *Spotlight with Smooth Cutoff Angle ($\cos\theta_{cutoff}$), Focused Illumination.*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - ক্রেনের ট্রলি থেকে সরাসরি নিচে জাহাজ ও ডকের ওপর পড়া উজ্জ্বল **কোনিক্যাল স্পটলাইট বিম**।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, the crane trolley houses a focused spotlight pointing directly downward with a cosine cutoff falloff, illuminating the cargo handling zone."*
+
+---
+
+### 📷 স্ক্রিনশট ৭: জ্যামিতিক প্রিমিটিভস—নেভিগেশনাল বয়া ও ট্রাফিক কোন (Geometric Primitives & Cone Quadric)
+* **স্লাইড নম্বর:** Slide 7 (Procedural Geometric Modeling)
+* **কীভাবে নিবেন (Controls):** 
+  - ক্যানালের পানির চ্যানেলে ভাসমান নেভিগেশনাল বয়া (Starboard Green / Port Red) অথবা ডকের রাস্তার ট্রাফিক কোনের কাছে হেঁটে যান।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *All 7 Primitives: Cube, Cylinder, Sphere, Cone, Ring, Water Grid, Sky Dome.*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - পানির ওপর ভাসমান **Conical Navigation Buoys** এবং রাস্তায় থাকা **High-Vis Orange Traffic Cones**।
+  - পাশাপাশি কিউব (বিল্ডিং), সিলিন্ডার (পোল) ও স্ফিয়ার (বাল্ব)।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, all models are generated algorithmically without external .obj files. Here you can see our analytical Cone and Ring primitives functioning as maritime navigational buoys and roadway safety markers."*
+
+---
+
+### 📷 স্ক্রিনশট ৮: ক্রেনের ৬-ধাপের হায়ারার্কিক্যাল মডেলিং (STS Crane Kinematic Hierarchy)
+* **স্লাইড নম্বর:** Slide 8 (Hierarchical Modeling & Kinematic Chains)
+* **কীভাবে নিবেন (Controls):** 
+  - কিবোর্ডের **`F5`** চাপুন (ক্রেন এক্সটার্নাল ক্যামেরা) অথবা ক্রেনের কাছে দাঁড়িয়ে ট্রলি ও বুমের দিকে তাকান।
+  - `A/D` চেপে ক্রেনের টারেট একটু ঘুরিয়ে রাখুন এবং `W/S` দিয়ে ট্রলি মুভ করুন।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *Multi-Level Parent-Child Kinematics, Matrix Stack Transformation ($M = M_{gantry} \cdot T_{turret} \cdot R_y \cdot \dots$).*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - গ্যান্ট্রি বেস $\rightarrow$ রোটেটিং টারেট $\rightarrow$ বুম আর্ম $\rightarrow$ মুভিং ট্রলি $\rightarrow$ ক্যাবলস $\rightarrow$ স্প্রেডার হুক $\rightarrow$ কন্টেইনার কার্গো।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, this crane embodies a 6-level kinematic transformation tree. When the turret slews around the Y-axis, all descendant child nodes—the boom, trolley, hoist cables, and spreader hook—transform synchronously in relative coordinate space."*
+
+---
+
+### 📷 স্ক্রিনশট ৯: ক্রেন ক্যাবিন ১স্ট-পারসন ভিউ ও আনলোডিং বে (Interactive Crane Cab & Cargo Bay)
+* **স্লাইড নম্বর:** Slide 9 (Interactive Mechanics & Port Logistics)
+* **কীভাবে নিবেন (Controls):** 
+  - ক্রেনের কাছে গিয়ে **`C`** চাপুন (প্লেয়ার সরাসরি ক্রেনের ক্যাবিনের ভেতরে ১স্ট-পারসন সিটে চলে যাবে)।
+  - ক্যাবিনের গ্লাসের ভেতর দিয়ে নিচে ডকের আনলোডিং বে ও জাহাজের কন্টেইনারের দিকে তাকান।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *1st-Person Machinery POV, Transparent Alpha Blending, Unloading Bay Mechanics, Telemetry HUD.*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - স্বচ্ছ ৩৬০° গ্লাস ককপিট, ড্যাশবোর্ডের টেলিমেট্রি স্ক্রিন, হুকের উচ্চতা ও ডিসট্যান্স মিটার, আনলোডিং বে-র ফ্ল্যাশিং অ্যাম্বার লাইটস।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, pressing C places the operator inside a 360° transparent glass cabin. From here, players operate the hoist, pick up intermodal containers, and deposit them into the automated dock bay (+500 score)."*
+
+---
+
+### 📷 স্ক্রিনশট ১০: বোনাস ফিচার—রিয়েল-টাইম স্ক্রিন-স্পেস রে-ট্রেসিং (Real-Time Whitted Ray Tracing)
+* **স্লাইড নম্বর:** Slide 10 (Advanced Bonus Feature: +10 Marks)
+* **কীভাবে নিবেন (Controls):** 
+  - যেকোনো ভিউতে থাকা অবস্থায় কিবোর্ডের **`R`** বা **`F9`** চাপুন।
+  - স্ক্রিনে সাথে সাথে রিয়েল-টাইম রে-ট্রেসিং শোকেস চালু হবে (ক্রোম স্ফিয়ার, রিফ্লেক্টিভ ওয়াটার ও শ্যাডো)।
+* **যে রিকোয়ারমেন্ট কভার করে:** 
+  - *Advanced Bonus Feature, Screen-Space Shader, Whitted Ray Tracing, Analytical Ray-Sphere Intersection, Hard Shadows, Specular Reflection Bounces.*
+* **স্ক্রিনশটে কী কী মার্ক/হাইলাইট করবেন:**
+  - মেটালিক ক্রোম স্ফিয়ারের গায়ে প্রতিফলিত দৃশ্য (Mirror Reflection), পারফেক্ট শ্যাডো এবং পানির ঢেউয়ের ওপর সেকেন্ডারি রে বাউন্স।
+* **স্লাইডে বলার কথা (Viva Talking Point):**
+  > *"Sir, as our advanced bonus feature, pressing R activates a pure GLSL screen-space Whitted ray tracing shader. It calculates primary rays, analytical sphere intersections, hard shadow rays, and recursive mirror reflection bounces in real time at 60 FPS."*
+
+---
+
+### 📷 অতিরিক্ত বোনাস শট (ঐচ্ছিক): লরি ড্রাইভ মোড (Key `L`)
+* **স্ক্রিনশট ১১ (Bonus):** ডকে লরির কাছে গিয়ে **`L`** চাপলে প্লেয়ার লরির ড্রাইভিং সিটে বসে যায়। উইন্ডশিল্ডের ভেতর থেকে স্টিয়ারিং ও সামনের রাস্তা দেখা যায়—এটি দেখাতে পারলে স্যাররা অতিরিক্ত ইমপ্রেসড হবেন!
+
+---
+
+# 🛠️ স্ক্রিনশট নেওয়ার টেকনিক্যাল টিপস (Windows OS)
+1. **ক্লিন স্ক্রিন পেতে:** কিবোর্ডের **`TAB`** কি চাপলে মাউস কার্সার আনলক হবে, যাতে কার্সার স্ক্রিনের মাঝখানে ছবি নষ্ট না করে।
+2. **হাই-কোয়ালিটি ক্যাপচার:** 
+   - কিবোর্ডের **`Win + Shift + S`** চেপে সরাসরি স্ক্রিনের ফুল উইন্ডো সিলেক্ট করে স্ক্রিনশট নিতে পারেন।
+   - অথবা **`Alt + PrintScreen`** চেপে বর্তমান উইন্ডোটি ক্লিপবোর্ডে কপি করে পেইন্ট বা পাওয়ারপয়েন্টে `Ctrl + V` দিয়ে পেস্ট করতে পারেন।
+
+---
+
+# 📊 সাজেস্টেড প্রেজেন্টেশন স্লাইড ডেক স্ট্রাকচার (১০–১২টি স্লাইড)
+
+| স্লাইড নং | স্লাইডের টাইটেল | কোন স্ক্রিনশট বসাবেন |
+| :---: | :--- | :--- |
+| **Slide 1** | Project Title & KUET CSE Information | (Official Cover Layout) |
+| **Slide 2** | Project Motivation & System Architecture | **Figure 1.1** (Pipeline Flowchart) |
+| **Slide 3** | 3D Port Environment & Coordinate Pipeline | **স্ক্রিনশট ১** (Panoramic Overview) + **Figure 1.2** |
+| **Slide 4** | Directional Light & Visible Celestial Bodies | **স্ক্রিনশট ২** (3D Radiant Sun & Daytime Lighting) |
+| **Slide 5** | Shading Models: Gouraud vs. Phong Shading | **স্ক্রিনশট ৩ ও ৪** (Side-by-side F1 vs F2) + **Figure 1.5** |
+| **Slide 6** | Night Cycle, Multi-Point & Spotlights | **স্ক্রিনশট ৫ ও ৬** (Night Moon, 7 Lamps & Crane Spotlight) |
+| **Slide 7** | Procedural 3D Geometric Primitives | **স্ক্রিনশট ৭** (Conical Buoys, Traffic Cones & Quadrics) |
+| **Slide 8** | Hierarchical Modeling & Kinematic Chains | **স্ক্রিনশট ৮** (STS Crane 6-Level Tree) + **Figure 1.6** |
+| **Slide 9** | 1st-Person Operator POV & Logistics Gameplay | **স্ক্রিনশট ৯** (Crane Cockpit & Cargo Bay) |
+| **Slide 10** | **Advanced Bonus:** Real-Time Ray Tracing | **স্ক্রিনশট ১০** (Whitted Ray Tracer) + **Figure 1.7** |
+| **Slide 11** | Performance Benchmarks & Challenges Overcome | 60 FPS Profiling Table + Clipping Solutions |
+| **Slide 12** | Conclusion & Q/A | Summary & Viva Defense |
+
+---
+
+💡 **অতিরিক্ত সাহায্য:**  
+আপনি চাইলে আমি সরাসরি এই সম্পূর্ণ প্রেজেন্টেশন স্লাইড ডেকটি একটি **`.pptx` (Microsoft PowerPoint)** ফাইলে কোড দিয়ে তৈরি করে দিতে পারি—যেখানে এই সবকটি স্লাইড, সুন্দর প্রফেশনাল ডিজাইন, টেক্সট, বুলেট পয়েন্ট এবং স্ক্রিনশট বসানোর নির্ধারিত প্লেসহোল্ডার ফ্রেম রেডি থাকবে। আপনি কি চান আমি এখনই আপনার জন্য এই প্রেজেন্টেশন `.pptx` ফাইলটিও জেনারেট করে দিই?

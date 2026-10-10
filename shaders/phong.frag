@@ -29,13 +29,15 @@ uniform vec3 uSpecularColor;
 
 uniform bool uIsWater;
 uniform bool uIsEmissive;
+uniform float uAlpha;
 uniform float uTime;
 
 out vec4 FragColor;
 
 void main() {
+    float alphaVal = (uAlpha > 0.001) ? uAlpha : 1.0;
     if (uIsEmissive) {
-        FragColor = vec4(uColor, 1.0);
+        FragColor = vec4(uColor, alphaVal);
         return;
     }
     vec3 n = normalize(Normal);
@@ -106,9 +108,9 @@ void main() {
 
     // Smooth atmospheric distance fog blending into the sky horizon
     float distToCam = length(uViewPos - FragPos);
-    float fogFactor = clamp((distToCam - 55.0) / 110.0, 0.0, 0.88);
-    vec3 fogColor = (uSunColor.r < 0.8) ? vec3(0.02, 0.04, 0.10) : vec3(0.42, 0.70, 0.92);
+    float fogFactor = clamp((distToCam - 140.0) / 260.0, 0.0, 0.85);
+    vec3 fogColor = (uSunColor.r < 0.8) ? vec3(0.02, 0.04, 0.10) : vec3(0.55, 0.72, 0.88);
     finalColor = mix(finalColor, fogColor, fogFactor);
 
-    FragColor = vec4(finalColor, 1.0);
+    FragColor = vec4(finalColor, alphaVal);
 }

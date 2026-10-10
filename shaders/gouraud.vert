@@ -77,8 +77,8 @@ void main() {
 
     vec3 baseColor = uColor * lighting;
     float distToCam = length(uViewPos - fragPos);
-    float fogFactor = clamp((distToCam - 55.0) / 110.0, 0.0, 0.88);
-    vec3 fogColor = (uSunColor.r < 0.8) ? vec3(0.02, 0.04, 0.10) : vec3(0.42, 0.70, 0.92);
+    float fogFactor = clamp((distToCam - 140.0) / 260.0, 0.0, 0.85);
+    vec3 fogColor = (uSunColor.r < 0.8) ? vec3(0.02, 0.04, 0.10) : vec3(0.55, 0.72, 0.88);
     vColor = mix(baseColor, fogColor, fogFactor);
 
     gl_Position = uProjection * uView * worldPos;
